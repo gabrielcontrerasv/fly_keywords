@@ -1,68 +1,10 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
-.root{
-  height: auto;
-  width : 550px;
-  background-color: white;
-  border-radius: 5px;
-  position: absolute;
-  top: 15%;
-  left: 33%;
-  margin: -25px 0 0 -25px; 
-  border: 1px solid
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-
-
-#text{
-    font-weight: 50;
-    font-size: 1.50em;
-    margin: 10px;
-    line-height : 30px;
-    font-family: "Raleway", sans-serif;
-  
-}
-.titulo{
-    font-weight: 800;
-    line-height : 35px;
-    margin-right: 45px;
-    font-family: "Raleway", sans-serif;
-  
-}
-
-.boton{
-    border-radius: 5px;
-    outline: none;
-    font-size: 0.85em;
-    opacity: 1;
-    cursor: pointer;
-    margin: 0;
-}
-
-a{
-  width: 40px;
-  height: 40px;
-  border : 1px solid;
-  margin: 2px;
-  cursor: pointer;
-  background-color: blue;
-}
-
-.root2{
-    background-color: green ;
-    transition: background-color 1s ease-in-out;
-}
-
-span{
-  color: black;
-  font-weight: 500;
-  
-
-}
-
-.logo{
-  margin-top: 100px;
-}
-img{
-  width: 170px;
-  height: 170px;
+body {
+  margin: 0;
+  padding: 0;
 }
