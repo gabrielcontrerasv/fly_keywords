@@ -4,7 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { ProviderContext } from "../../providers";
-import {} from "./styles";
+import {
+  PageContainer,
+  LoginContainer,
+  LoginHeader,
+  LoginFooter,
+} from "./styles";
+
+import logo from "../../assets/imgs/escudo4.png";
 
 function Login() {
   const [user, setUser] = useState("");
@@ -13,38 +20,79 @@ function Login() {
   const history = useNavigate();
 
   const submit = () => {
-    let user = {
-      id: 1,
-      name: "usuario 1",
-    };
-    updateUser(user);
-    history("/home");
+    if (user && password) {
+      let finalUser = {
+        id: 1,
+        name: user,
+      };
+      updateUser(finalUser);
+      history("/home");
+    }
 
     //alert("error");
   };
 
   return (
-    <div>
-      <div>
-        <div>
-          <input
-            value={user}
-            autoFocus
-            placeholder="Usuario"
-            onChange={(e) => setUser(e.target.value)}
-          />
-          <input
-            type="password"
-            value={password}
-            placeholder="Contraseña"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div>
-          <button onClick={() => submit()}>Enviar</button>
-        </div>
-      </div>
-    </div>
+    <PageContainer>
+      <div></div>
+      <div></div>
+      <LoginContainer>
+        <LoginHeader>
+          <img src={logo} alt="" />
+        </LoginHeader>
+        <LoginFooter>
+          <div>
+            <h4>FUERZA AÉREA COLOMBIANA</h4>
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                @
+              </span>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Usuario sin @"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                value={user}
+                onChange={(e) => {
+                  setUser(e.target.value);
+                }}
+              />
+            </div>
+
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                #
+              </span>
+
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Contraseña"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+            </div>
+
+            <div className="input-group mb-3" style={{ textAlign: "right" }}>
+              <button
+                className="btn btn-secondary"
+                onClick={() => {
+                  submit();
+                }}
+              >
+                Ingresar
+              </button>
+            </div>
+          </div>
+        </LoginFooter>
+      </LoginContainer>
+      <div></div>
+    </PageContainer>
   );
 }
 
