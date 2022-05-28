@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
 const Home = lazy(() => import("./containers/Home"));
+const Register = lazy(() => import("./containers/Register"));
 const Login = lazy(() => import("./containers/Login"));
 const NotFound = lazy(() => import("./containers/NotFound"));
 
@@ -25,6 +26,7 @@ function RequireAuth({ children }) {
 function App() {
   const containers = [
     { component: <Login />, path: "/", private: false },
+    { component: <Register />, path: "/register", private: false },
     { component: <Home />, path: "/home", private: true },
     { component: <NotFound />, path: "*", private: false },
   ];

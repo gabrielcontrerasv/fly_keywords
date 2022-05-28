@@ -103,7 +103,7 @@ function Login() {
             </div>
             <div className="input-group mb-3">
               <p style={{ textAlign: "right", minWidth: "100%" }}>
-                <Link to="/register">Registrarse</Link>
+                <Link to="/">Login</Link>
               </p>
             </div>
           </div>
