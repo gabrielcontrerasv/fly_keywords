@@ -98,7 +98,7 @@ function Login() {
                   submit();
                 }}
               >
-                Ingresar
+                Registrarse
               </button>
             </div>
             <div className="input-group mb-3">
