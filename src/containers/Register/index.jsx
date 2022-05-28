@@ -14,13 +14,14 @@ import {
 import logo from "../../assets/imgs/escudo4.png";
 
 function Login() {
+  const [name, setName] = useState("");
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const { updateUser } = useContext(ProviderContext);
   const history = useNavigate();
 
   const submit = () => {
-    if (user && password) {
+    if (user && password && name) {
       /*
       data = {};
       url = "";
@@ -56,6 +57,22 @@ function Login() {
         <LoginFooter>
           <div>
             <h4>FUERZA AÉREA COLOMBIANA</h4>
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                @
+              </span>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Nombre"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
+            </div>
             <div className="input-group mb-3">
               <span className="input-group-text" id="basic-addon1">
                 @

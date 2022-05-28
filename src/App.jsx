@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
 const Home = lazy(() => import("./containers/Home"));
+const Progress = lazy(() => import("./containers/Progress"));
 const Register = lazy(() => import("./containers/Register"));
 const Login = lazy(() => import("./containers/Login"));
 const NotFound = lazy(() => import("./containers/NotFound"));
@@ -28,6 +29,7 @@ function App() {
     { component: <Login />, path: "/", private: false },
     { component: <Register />, path: "/register", private: false },
     { component: <Home />, path: "/home", private: true },
+    { component: <Progress />, path: "/progress", private: true },
     { component: <NotFound />, path: "*", private: false },
   ];
 

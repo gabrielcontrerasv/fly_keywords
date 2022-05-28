@@ -7,6 +7,8 @@ import Options from "../../components/options";
 import Logo from "../../components/logo/index";
 import { PageContainer, CarouselContainer, CarouselContent } from "./styles";
 
+import Navbar from "../../components/Nabvar";
+
 import logofac from "../../assets/imgs/logofac.png";
 
 const colors = [
@@ -33,6 +35,7 @@ function Home() {
   }, []);
   return (
     <PageContainer>
+      <Navbar />
       {/** 
       <div className="row">
         <section className="col-3">
