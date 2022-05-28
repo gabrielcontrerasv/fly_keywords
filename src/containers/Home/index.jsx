@@ -26,7 +26,7 @@ function Home() {
         <Carousel>
           {[...quotes].map((quote, index) => {
             return (
-              <CarouselContent>
+              <CarouselContent key={index}>
                 <div className="row mt-2">
                   <section className="col-md-12 d-flex d-flex justify-content-center text-center">
                     <b>
