@@ -1,16 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
+import data from "../../data.json";
 
 import Footer from "../../components/footer/footer";
-import { quotes } from "../../components/data/data";
 import Options from "../../components/options";
 import Logo from "../../components/logo/index";
 import { PageContainer, CarouselContainer, CarouselContent } from "./styles";
 
 import logofac from "../../assets/imgs/logofac.png";
 
+const colors = [
+  "#3346FF",
+  "#33FFB5",
+  "#DE1127",
+  "#11DEB5",
+  "#3346FF",
+  "#33FFB5",
+  "#DE1127",
+];
+
 function Home() {
+  const [quotes, setQuotes] = useState([]);
   const [quote, setQuote] = useState(0);
+
+  useEffect(() => {
+    let finalData = [...Array(10).keys()].map((element, index) => {
+      const random = Math.floor(Math.random() * data.length);
+      return { ...data[random], color: colors[index] };
+    });
+
+    setQuotes([...finalData]);
+  }, []);
   return (
     <PageContainer>
       {/** 
@@ -31,7 +51,7 @@ function Home() {
                   <section className="col-md-12 d-flex d-flex justify-content-center text-center">
                     <b>
                       <h2 className="autor" id="autor">
-                        {quote.titulo}
+                        {quote.word}
                       </h2>
                     </b>
                   </section>
@@ -43,7 +63,7 @@ function Home() {
                       <p id="text" style={{ color: quote.color }}>
                         Significado:
                         <i className="fa fa-quote-left"> </i>
-                        {quote.quote}
+                        {quote.signification}
                         <i className="fa fa-quote-right"></i>
                       </p>
                     </section>
