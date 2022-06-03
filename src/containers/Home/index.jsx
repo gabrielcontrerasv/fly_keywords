@@ -21,7 +21,7 @@ function Home() {
   const [quote, setQuote] = useState(0);
 
   useEffect(() => {
-    let finalData = [...Array(10).keys()].map((element, index) => {
+    let finalData = [...Array(3).keys()].map((element, index) => {
       const random = Math.floor(Math.random() * data.length);
       return { ...data[random], color: colors[index] };
     });
@@ -42,9 +42,10 @@ function Home() {
                     <div className="row mt-2">
                       <section className="col-md-12 d-flex d-flex justify-content-center text-center">
                         <b>
-                          <h2 className="autor" id="autor">
-                            {quote.word}
-                          </h2>
+                          <img
+                            src={quote.image}
+                            />
+                          
                         </b>
                       </section>
                     </div>
@@ -53,7 +54,7 @@ function Home() {
                       <div className="row mt-2 d-block col-12">
                         <section className="col-md-12 text-center">
                           <p id="text" style={{ color: quote.color }}>
-                            Significado:
+                          
                             <i className="fa fa-quote-left"> </i>
                             {quote.signification}
                             <i className="fa fa-quote-right"></i>
@@ -73,10 +74,10 @@ function Home() {
                           onClick={() =>
                             setQuote(quotes.length - 1 > quote ? quote + 1 : 0)
                           }
-                          className="col-3 boton btn btn-success mb-2"
-                          id="Aprendida"
+                          className="col-3 boton btn btn-success mb-4"
+                          id="detalles"
                         >
-                          Aprendida
+                          VER
                         </button>
                       </section>
                     </div>

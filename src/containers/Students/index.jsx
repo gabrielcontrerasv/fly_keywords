@@ -47,7 +47,7 @@ function Home() {
           </div>
         </SearchContainer>
         <CardsContainer>
-          {quotes.map((element, index) => {
+          {quotes.filter((element) => element.force_id).map((element, index) => {
             return (
               <div
                 className="card"
@@ -55,13 +55,13 @@ function Home() {
                 key={index}
               >
                 <img
-                  src={logofac}
+                  src={element.image}
                   className="card-img-top"
                   alt="..."
                   style={{ borderRadius: ".5rem" }}
                 />
                 <div className="card-body">
-                  <h5 className="card-title text-center">{element.word}</h5>
+                  <h5 className="card-title text-center">{element.name}</h5>
                 </div>
               </div>
             );

@@ -32,7 +32,7 @@ const CarouselContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background: hsla(0, 0%, 0%, 0.6);
+  background: hsla(0, 0%, 90%);
   border-radius: 0.5rem;
 `;
 

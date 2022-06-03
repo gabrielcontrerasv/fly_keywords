@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import background from "../../assets/imgs/error404.webp";
+//import background from "../../assets/imgs/error404.webp";
+import background from "../../assets/imgs/lost.jpg";
 
 const ContainerPage = styled.div`
   min-width: 100vw;

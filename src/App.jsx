@@ -45,7 +45,7 @@ const containers = [
     component: <Progress />,
     path: "/progress",
     inMenu: true,
-    title: "Progreso",
+    title: "Resultados",
     private: true,
   },
   {
