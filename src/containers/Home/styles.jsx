@@ -7,7 +7,7 @@ const PageContainer = styled.div`
   max-width: 100vw;
   max-height: 100vh;
   overflow: hidden;
-  padding: 2rem;
+  padding: 2rem 10rem;
 
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@ const PageContainer = styled.div`
 `;
 
 const CarouselContainer = styled.div`
-  max-width: 50vw;
+  max-width: 25vw;
 
   img {
     max-width: 100%;
@@ -32,7 +32,7 @@ const CarouselContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background: hsla(0, 0%, 0%, 0.3);
+  background: hsla(0, 0%, 0%, 0.6);
   border-radius: 0.5rem;
 `;
 

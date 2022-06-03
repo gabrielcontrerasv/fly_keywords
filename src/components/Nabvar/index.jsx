@@ -12,11 +12,11 @@ const elements = containers.filter((element) => {
 const Navbar = () => {
   return (
     <NavbarContainer>
-      {[...containers.filter((element) => element.inMenu === true)].map(
+      {[...containers.filter((element) => element.inMenu)].map(
         (element, index) => {
           return (
             <Link key={index} to={element.path}>
-              {element.title}
+              <div>{element.title}</div>
             </Link>
           );
         }

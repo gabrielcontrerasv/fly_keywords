@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
 const Home = lazy(() => import("./containers/Home"));
+const Students = lazy(() => import("./containers/Students"));
 const Progress = lazy(() => import("./containers/Progress"));
 const Register = lazy(() => import("./containers/Register"));
 const Login = lazy(() => import("./containers/Login"));
@@ -45,6 +46,13 @@ const containers = [
     path: "/progress",
     inMenu: true,
     title: "Progreso",
+    private: true,
+  },
+  {
+    component: <Students />,
+    path: "/students",
+    inMenu: true,
+    title: "Estudiantes",
     private: true,
   },
   {

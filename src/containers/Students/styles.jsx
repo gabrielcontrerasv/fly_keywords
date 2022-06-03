@@ -12,6 +12,7 @@ const PageContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
 
+  background-image: url(${background});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
