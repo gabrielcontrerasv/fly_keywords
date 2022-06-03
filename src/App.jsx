@@ -11,6 +11,8 @@ import "./App.css";
 const Home = lazy(() => import("./containers/Home"));
 const Students = lazy(() => import("./containers/Students"));
 const Progress = lazy(() => import("./containers/Progress"));
+const Import = lazy(() => import("./containers/Import"));
+const Export = lazy(() => import("./containers/Export"));
 const Register = lazy(() => import("./containers/Register"));
 const Login = lazy(() => import("./containers/Login"));
 const NotFound = lazy(() => import("./containers/NotFound"));
@@ -53,6 +55,20 @@ const containers = [
     path: "/students",
     inMenu: true,
     title: "Estudiantes",
+    private: true,
+  },
+  {
+    component: <Import />,
+    path: "/import",
+    inMenu: true,
+    title: "importar",
+    private: true,
+  },
+  {
+    component: <Export />,
+    path: "/export",
+    inMenu: true,
+    title: "exportar",
     private: true,
   },
   {
