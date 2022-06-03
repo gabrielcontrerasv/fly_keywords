@@ -38,6 +38,33 @@ const LoginHeader = styled.div`
   }
 `;
 
+const LoginHeaderEjc = styled.div`
+  background-color:  #e81531;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 30rem;
+  min-height: 40vh;
+
+  & img {
+    max-width: 90%;
+  }
+`;
+
+
+const LoginHeaderArc = styled.div`
+  background-color:  #051766;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 30rem;
+  min-height: 40vh;
+
+  & img {
+    max-width: 90%;
+  }
+`;
+
 const LoginFooter = styled.div`
   background-color: white;
   display: flex;
@@ -47,4 +74,4 @@ const LoginFooter = styled.div`
   padding: 0.5rem;
 `;
 
-export { PageContainer, LoginContainer, LoginHeader, LoginFooter };
+export { PageContainer, LoginContainer, LoginHeader, LoginFooter,LoginHeaderArc,LoginHeaderEjc };

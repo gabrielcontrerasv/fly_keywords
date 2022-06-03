@@ -8,10 +8,15 @@ import {
   PageContainer,
   LoginContainer,
   LoginHeader,
+  LoginHeaderEjc,
+  LoginHeaderArc,
   LoginFooter,
 } from "./styles";
 
-import logo from "../../assets/imgs/escudo4.png";
+import fac from "../../assets/imgs/escudo4.png";
+import armada from "../../assets/imgs/armada.png";
+import ejercito from "../../assets/imgs/ejercito.png";
+import { faCompass } from "@fortawesome/free-regular-svg-icons";
 
 function Login() {
   const [user, setUser] = useState("");
@@ -47,15 +52,74 @@ function Login() {
 
   return (
     <PageContainer>
-      <div></div>
-      <div></div>
+      
+  
       <LoginContainer>
+        <LoginHeaderEjc>
+          <img src={ejercito} alt="" />
+        </LoginHeaderEjc>
+        <LoginFooter>
+          <div>
+            <h4 className="text-center">EJERCITO NACIONAL</h4>
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                @
+              </span>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Usuario sin @"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                value={user}
+                onChange={(e) => {
+                  setUser(e.target.value);
+                }}
+              />
+            </div>
+
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                #
+              </span>
+
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Contraseña"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+            </div>
+
+            <div className="input-group mb-3" style={{ textAlign: "right" }}>
+              <button
+                className="btn btn-secondary text-center"
+                onClick={() => {
+                  submit();
+                }}
+              >
+                Ingresar
+              </button>
+            </div>
+          </div>
+        </LoginFooter>
+      </LoginContainer>
+
+      <LoginContainer>
+      <strong style={{color:"white",fontSize: "1.5rem",textAlign:"center"}}>
+          ANFITRION
+          </strong>
         <LoginHeader>
-          <img src={logo} alt="" />
+          <img src={fac} alt="" />
         </LoginHeader>
         <LoginFooter>
           <div>
-            <h4>FUERZA AÉREA COLOMBIANA</h4>
+            <h4 className="text-center">FUERZA AÉREA COLOMBIANA</h4>
             <div className="input-group mb-3">
               <span className="input-group-text" id="basic-addon1">
                 @
@@ -101,10 +165,64 @@ function Login() {
                 Ingresar
               </button>
             </div>
+          </div>
+        </LoginFooter>
+      </LoginContainer>
+
+
+
+
+      <LoginContainer>
+        <LoginHeaderArc>
+          <img src={armada} alt="" />
+        </LoginHeaderArc>
+        <LoginFooter>
+          <div>
+            <h4 className="text-center">ARMADA NACIONAL</h4>
             <div className="input-group mb-3">
-              <p style={{ textAlign: "right", minWidth: "100%" }}>
-                <Link to="/register">Registrarse</Link>
-              </p>
+              <span className="input-group-text" id="basic-addon1">
+                @
+              </span>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Usuario sin @"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                value={user}
+                onChange={(e) => {
+                  setUser(e.target.value);
+                }}
+              />
+            </div>
+
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                #
+              </span>
+
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Contraseña"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+            </div>
+
+            <div className="input-group mb-3" style={{ textAlign: "right" }}>
+              <button
+                className="btn btn-secondary"
+                onClick={() => {
+                  submit();
+                }}
+              >
+                Ingresar
+              </button>
             </div>
           </div>
         </LoginFooter>

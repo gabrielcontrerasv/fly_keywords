@@ -41,7 +41,7 @@ function Home() {
             <input
               className="form-control me-2"
               type="search"
-              placeholder="Escriba su palabra"
+              placeholder="Buscar informacion"
               aria-label="Search"
             />
             <button className="btn btn-primary" type="submit">
@@ -65,7 +65,6 @@ function Home() {
                 />
                 <div className="card-body">
                   <h5 className="card-title text-center">{element.word}</h5>
-                  {/*<p className="card-text">{element.signification}</p>*/}
                 </div>
               </div>
             );
