@@ -26,7 +26,7 @@ const LoginContainer = styled.div`
 `;
 
 const LoginHeader = styled.div`
-  background-color: black;
+  background-color: ${(props) => props.background};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +39,7 @@ const LoginHeader = styled.div`
 `;
 
 const LoginHeaderEjc = styled.div`
-  background-color:  #e81531;
+  background-color: #e81531;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,9 +51,8 @@ const LoginHeaderEjc = styled.div`
   }
 `;
 
-
 const LoginHeaderArc = styled.div`
-  background-color:  #051766;
+  background-color: #051766;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,4 +73,11 @@ const LoginFooter = styled.div`
   padding: 0.5rem;
 `;
 
-export { PageContainer, LoginContainer, LoginHeader, LoginFooter,LoginHeaderArc,LoginHeaderEjc };
+export {
+  PageContainer,
+  LoginContainer,
+  LoginHeader,
+  LoginFooter,
+  LoginHeaderArc,
+  LoginHeaderEjc,
+};
