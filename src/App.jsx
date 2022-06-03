@@ -24,15 +24,39 @@ function RequireAuth({ children }) {
   return children;
 }
 
-function App() {
-  const containers = [
-    { component: <Login />, path: "/", private: false },
-    { component: <Register />, path: "/register", private: false },
-    { component: <Home />, path: "/home", private: true },
-    { component: <Progress />, path: "/progress", private: true },
-    { component: <NotFound />, path: "*", private: false },
-  ];
+const containers = [
+  { component: <Login />, path: "/", inMenu: false, title: "", private: false },
+  {
+    component: <Register />,
+    path: "/register",
+    inMenu: false,
+    title: "",
+    private: false,
+  },
+  {
+    component: <Home />,
+    path: "/home",
+    inMenu: true,
+    title: "Home",
+    private: true,
+  },
+  {
+    component: <Progress />,
+    path: "/progress",
+    inMenu: true,
+    title: "Progreso",
+    private: true,
+  },
+  {
+    component: <NotFound />,
+    path: "*",
+    inMenu: false,
+    title: "",
+    private: false,
+  },
+];
 
+function App() {
   return (
     <Routes>
       {containers.map((element, index) => {
@@ -61,3 +85,4 @@ function App() {
 }
 
 export default App;
+export { containers };
