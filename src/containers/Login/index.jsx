@@ -46,15 +46,25 @@ const data = [
 ];
 
 function Login() {
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
   const { updateUser } = useContext(ProviderContext);
   const history = useNavigate();
 
   const [logins, setLogins] = useState([...data]);
 
-  const submit = () => {
-    if (user && password) {
+  const setUser = (value, index) => {
+    let copyLogins = [...logins];
+    copyLogins[index].user = value;
+    setLogins([...copyLogins]);
+  };
+
+  const setPassword = (value, index) => {
+    let copyLogins = [...logins];
+    copyLogins[index].password = value;
+    setLogins([...copyLogins]);
+  };
+
+  const submit = (index) => {
+    if (logins[index].user && logins[index].password) {
       /*
       data = {};
       url = "";
@@ -70,7 +80,7 @@ function Login() {
 
       let finalUser = {
         id: 1,
-        name: user,
+        name: logins[index].user,
       };
       updateUser(finalUser);
       history("/home");
@@ -112,9 +122,9 @@ function Login() {
                     placeholder="Usuario sin @"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
-                    value={user}
+                    value={element.user}
                     onChange={(e) => {
-                      setUser(e.target.value);
+                      setUser(e.target.value, index);
                     }}
                   />
                 </div>
@@ -130,9 +140,9 @@ function Login() {
                     placeholder="Contraseña"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
-                    value={password}
+                    value={element.password}
                     onChange={(e) => {
-                      setPassword(e.target.value);
+                      setPassword(e.target.value, index);
                     }}
                   />
                 </div>
@@ -144,7 +154,7 @@ function Login() {
                   <button
                     className="btn btn-secondary"
                     onClick={() => {
-                      submit();
+                      submit(index);
                     }}
                   >
                     Ingresar
