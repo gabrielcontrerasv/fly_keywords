@@ -2,9 +2,6 @@ import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import data from "../../data.json";
 
-import Footer from "../../components/footer/footer";
-import Options from "../../components/options";
-import Logo from "../../components/logo/index";
 import { PageContainer, CardsContainer, SearchContainer } from "./styles";
 
 import logofac from "../../assets/imgs/logofac.png";
