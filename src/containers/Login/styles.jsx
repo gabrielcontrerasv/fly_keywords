@@ -5,24 +5,62 @@ const PageContainer = styled.div`
   min-width: 100vw;
   min-height: 100vh;
   max-width: 100vw;
-  max-height: 100vh;
-  overflow: hidden;
-  padding: 2rem;
+  padding: 3rem;
 
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 3rem;
+  flex-wrap: nowrap;
 
   background-image: url(${background});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (min-width: 992px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+  }
+
+  @media (min-width: 1200px) {
+    overflow: hidden;
+    flex-wrap: nowrap;
+  }
 `;
 
 const LoginContainer = styled.div`
-  max-width: 30rem;
+  position: relative;
+`;
+
+const LoginContent = styled.div`
   border-radius: 0.5rem;
   overflow: hidden;
+
+  & > div {
+    min-width: 90vw;
+  }
+
+  @media (min-width: 768px) {
+    & > div {
+      min-width: 60vw;
+    }
+  }
+
+  @media (min-width: 992px) {
+    & > div {
+      min-width: 40vw;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    & > div {
+      min-width: 30vw;
+    }
+  }
 `;
 
 const LoginHeader = styled.div`
@@ -30,33 +68,6 @@ const LoginHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 30rem;
-  min-height: 40vh;
-
-  & img {
-    max-width: 90%;
-  }
-`;
-
-const LoginHeaderEjc = styled.div`
-  background-color: #e81531;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 30rem;
-  min-height: 40vh;
-
-  & img {
-    max-width: 90%;
-  }
-`;
-
-const LoginHeaderArc = styled.div`
-  background-color: #051766;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 30rem;
   min-height: 40vh;
 
   & img {
@@ -69,8 +80,15 @@ const LoginFooter = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-width: 30rem;
   padding: 0.5rem;
+`;
+
+const Host = styled.strong`
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  position: absolute;
+  top: -2rem;
 `;
 
 export {
@@ -78,6 +96,6 @@ export {
   LoginContainer,
   LoginHeader,
   LoginFooter,
-  LoginHeaderArc,
-  LoginHeaderEjc,
+  Host,
+  LoginContent,
 };

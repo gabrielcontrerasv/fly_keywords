@@ -7,43 +7,13 @@ import { ProviderContext } from "../../providers";
 import {
   PageContainer,
   LoginContainer,
+  LoginContent,
   LoginHeader,
-  LoginHeaderEjc,
-  LoginHeaderArc,
   LoginFooter,
+  Host,
 } from "./styles";
 
-import fac from "../../assets/imgs/escudo4.png";
-import armada from "../../assets/imgs/armada.png";
-import ejercito from "../../assets/imgs/ejercito.png";
-import { faCompass } from "@fortawesome/free-regular-svg-icons";
-
-const data = [
-  {
-    user: "",
-    password: "",
-    title: "EJERCITO NACIONAL",
-    shield: ejercito,
-    isHost: false,
-    background: "#e81531",
-  },
-  {
-    user: "",
-    password: "",
-    title: "FUERZA AÉREA COLOMBIANA",
-    shield: fac,
-    isHost: true,
-    background: "#000",
-  },
-  {
-    user: "",
-    password: "",
-    title: "ARMADA NACIONAL",
-    shield: armada,
-    isHost: false,
-    background: "#051766",
-  },
-];
+import { data } from "./data";
 
 function Login() {
   const { updateUser } = useContext(ProviderContext);
@@ -94,74 +64,65 @@ function Login() {
       {logins.map((element, index) => {
         return (
           <LoginContainer key={index}>
-            {element.isHost && (
-              <strong
-                style={{
-                  color: "white",
-                  fontSize: "1.5rem",
-                  textAlign: "center",
-                }}
-              >
-                ANFITRION
-              </strong>
-            )}
+            {element.isHost && <Host>ANFITRION</Host>}
+            <LoginContent>
+              <LoginHeader background={element.background}>
+                <img src={element.shield} alt="" />
+              </LoginHeader>
+              <LoginFooter>
+                <div>
+                  <h4 className="text-center">{element.title}</h4>
+                  <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">
+                      @
+                    </span>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Usuario sin @"
+                      aria-label="Username"
+                      aria-describedby="basic-addon1"
+                      value={element.user}
+                      onChange={(e) => {
+                        setUser(e.target.value, index);
+                      }}
+                    />
+                  </div>
 
-            <LoginHeader background={element.background}>
-              <img src={element.shield} alt="" />
-            </LoginHeader>
-            <LoginFooter>
-              <div>
-                <h4 className="text-center">{element.title}</h4>
-                <div className="input-group mb-3">
-                  <span className="input-group-text" id="basic-addon1">
-                    @
-                  </span>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Usuario sin @"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    value={element.user}
-                    onChange={(e) => {
-                      setUser(e.target.value, index);
-                    }}
-                  />
-                </div>
+                  <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">
+                      #
+                    </span>
 
-                <div className="input-group mb-3">
-                  <span className="input-group-text" id="basic-addon1">
-                    #
-                  </span>
+                    <input
+                      type="password"
+                      className="form-control"
+                      placeholder="Contraseña"
+                      aria-label="Username"
+                      aria-describedby="basic-addon1"
+                      value={element.password}
+                      onChange={(e) => {
+                        setPassword(e.target.value, index);
+                      }}
+                    />
+                  </div>
 
-                  <input
-                    type="password"
-                    className="form-control"
-                    placeholder="Contraseña"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    value={element.password}
-                    onChange={(e) => {
-                      setPassword(e.target.value, index);
-                    }}
-                  />
-                </div>
-
-                <div
-                  className="input-group mb-3"
-                  style={{ textAlign: "right" }}
-                >
-                  <button
-                    className="btn btn-secondary"
-                    onClick={() => {
-                      submit(index);
-                    }}
+                  <div
+                    className="input-group mb-3"
+                    style={{ textAlign: "right" }}
                   >
-                    Ingresar
-                  </button>
+                    <button
+                      className="btn btn-secondary"
+                      onClick={() => {
+                        submit(index);
+                      }}
+                    >
+                      Ingresar
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </LoginFooter>
+              </LoginFooter>
+            </LoginContent>
           </LoginContainer>
         );
       })}
