@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
-import Navbar from "../../components/Nabvar";
+
+import Layout from "../../components/Layout";
 
 function Import() {
-  return (
-    <div>
-    <Navbar />
-    <h1>Importar</h1>
-    </div>
-
-  );
+  return <Layout title={"Importar"}></Layout>;
 }
 
 export default Import;

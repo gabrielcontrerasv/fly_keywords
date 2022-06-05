@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import data from "../../data.json";
 
-import { PageContainer, CardsContainer, SearchContainer } from "./styles";
-
-import logofac from "../../assets/imgs/logofac.png";
-import Navbar from "../../components/Nabvar";
+import Layout from "../../components/Layout";
+import { CardsContainer, SearchContainer } from "./styles";
 
 const colors = [
   "#3346FF",
@@ -30,8 +28,7 @@ function Home() {
     setQuotes([...finalData]);
   }, []);
   return (
-    <PageContainer>
-      <Navbar />
+    <Layout>
       <div>
         <SearchContainer>
           <div className="d-flex">
@@ -47,28 +44,30 @@ function Home() {
           </div>
         </SearchContainer>
         <CardsContainer>
-          {quotes.filter((element) => element.force_id).map((element, index) => {
-            return (
-              <div
-                className="card"
-                style={{ width: "18rem", borderRadius: ".5rem" }}
-                key={index}
-              >
-                <img
-                  src={element.image}
-                  className="card-img-top"
-                  alt="..."
-                  style={{ borderRadius: ".5rem" }}
-                />
-                <div className="card-body">
-                  <h5 className="card-title text-center">{element.name}</h5>
+          {quotes
+            .filter((element) => element.force_id)
+            .map((element, index) => {
+              return (
+                <div
+                  className="card"
+                  style={{ width: "18rem", borderRadius: ".5rem" }}
+                  key={index}
+                >
+                  <img
+                    src={element.image}
+                    className="card-img-top"
+                    alt="..."
+                    style={{ borderRadius: ".5rem" }}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title text-center">{element.name}</h5>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </CardsContainer>
       </div>
-    </PageContainer>
+    </Layout>
   );
 }
 

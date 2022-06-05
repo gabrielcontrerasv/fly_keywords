@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
+
+import Layout from "../../components/Layout";
+
+import { CarouselContainer, CarouselContent } from "./styles";
+
 import data from "../../data.json";
-
-import { PageContainer, CarouselContainer, CarouselContent } from "./styles";
-
-import Navbar from "../../components/Nabvar";
 
 const colors = [
   "#3346FF",
@@ -29,12 +30,10 @@ function Home() {
     setQuotes([...finalData]);
   }, []);
   return (
-    <PageContainer>
-      <Navbar />
-
-      {[0, 1, 2].map((element) => {
+    <Layout title={"HOME"}>
+      {[0, 1, 2].map((element, index) => {
         return (
-          <CarouselContainer>
+          <CarouselContainer key={index}>
             <Carousel autoPlay infiniteLoop interval={3000}>
               {[...quotes].map((quote, index) => {
                 return (
@@ -42,10 +41,7 @@ function Home() {
                     <div className="row mt-2">
                       <section className="col-md-12 d-flex d-flex justify-content-center text-center">
                         <b>
-                          <img
-                            src={quote.image}
-                            />
-                          
+                          <img src={quote.image} />
                         </b>
                       </section>
                     </div>
@@ -54,7 +50,6 @@ function Home() {
                       <div className="row mt-2 d-block col-12">
                         <section className="col-md-12 text-center">
                           <p id="text" style={{ color: quote.color }}>
-                          
                             <i className="fa fa-quote-left"> </i>
                             {quote.signification}
                             <i className="fa fa-quote-right"></i>
@@ -88,12 +83,7 @@ function Home() {
           </CarouselContainer>
         );
       })}
-
-      {/** 
-      <Logo />
-      <Footer />
-      */}
-    </PageContainer>
+    </Layout>
   );
 }
 

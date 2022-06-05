@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
-import Navbar from "../../components/Nabvar";
+
+import Layout from "../../components/Layout";
 
 function Export() {
-  return (
-    <div>
-    <Navbar />
-    <h1>Exportar</h1>
-    </div>
-
-  );
+  return <Layout title={"Exportar"}></Layout>;
 }
 
 export default Export;
