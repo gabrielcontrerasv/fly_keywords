@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
-
 import Layout from "../../components/Layout";
-
 import { CarouselContainer, CarouselContent } from "./styles";
-
 import data from "../../data.json";
 
 const colors = [
