@@ -2,6 +2,7 @@ import styled from "styled-components";
 import background from "../../assets/imgs/bg_4.png";
 
 const PageContainer = styled.div`
+  height: 100vh;
   min-width: 100vw;
   min-height: 100vh;
   max-width: 100vw;
@@ -22,7 +23,6 @@ const PageContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 `;
-
 
 const PageContent = styled.div`
   display: flex;

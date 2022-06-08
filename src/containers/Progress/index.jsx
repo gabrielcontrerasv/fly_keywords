@@ -3,20 +3,21 @@ import { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import Navbar from "../../components/Nabvar";
 import { CustomPie } from "../../components/CustomCharts/CustomPie";
-import {} from "./styles";
+import { PageContent, PageContentTop, PageContentDown } from "./styles";
 
 function Home() {
   return (
-    <Layout >
-      <div>
-    <CustomPie/>
-    </div>
-    
-    <div>
-    <CustomPie />
-    <CustomPie />
-    <CustomPie />
-    </div>
+    <Layout>
+      <PageContent>
+        <PageContentTop>
+          <CustomPie minWith={"20vw"} />
+        </PageContentTop>
+        <PageContentDown>
+          <CustomPie />
+          <CustomPie />
+          <CustomPie />
+        </PageContentDown>
+      </PageContent>
     </Layout>
   );
 }
