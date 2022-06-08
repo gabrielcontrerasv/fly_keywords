@@ -7,7 +7,6 @@ const PageContainer = styled.div`
   max-width: 100vw;
   overflow-x: hidden;
   padding: 2rem 10rem;
-
   display: flex;
   flex-direction: column;
 
@@ -24,34 +23,10 @@ const PageContainer = styled.div`
   background-size: cover;
 `;
 
-const PageContainerTest = styled.div`
-  min-width: 100vw;
-  min-height: 100vh;
-  max-width: 100vw;
-  overflow-x: hidden;
-  padding: 2rem 10rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  ${(props) => {
-    if (props.backgroundColor) {
-      return `background-color: ${props.background};`;
-    } else {
-      return ` background-image: url(${background});`;
-    }
-  }}
-
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
 
 const PageContent = styled.div`
   display: flex;
   flex-grow: 1;
-
   justify-content: center;
   align-items: center;
   gap: 1rem;

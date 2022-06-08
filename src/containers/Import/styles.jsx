@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import background from "../../assets/imgs/bg_4.png";
 
 const PageContainer = styled.div`
   min-width: 100vw;
