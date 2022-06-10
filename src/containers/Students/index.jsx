@@ -9,9 +9,7 @@ function Home() {
         <div className="Search">
           <Search />
         </div>
-        <div className="Cards">
-          <Card />
-        </div>
+        <Card />
       </div>
     </Layout>
   );

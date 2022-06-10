@@ -7,7 +7,7 @@ const PageContainer = styled.div`
   min-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
-  padding: 2rem 10rem;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
 
@@ -22,6 +22,10 @@ const PageContainer = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (min-width: 1200px) {
+    padding: 2rem;
+  }
 `;
 
 const PageContent = styled.div`
@@ -30,6 +34,7 @@ const PageContent = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 `;
 
 const Title = styled.h1`
