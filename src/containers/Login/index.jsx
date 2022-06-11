@@ -15,7 +15,7 @@ import {
 import { data } from "./data";
 
 function Login() {
-  const { updateUser } = useContext(ProviderContext);
+  const { updateInstance, updateUser, instance } = useContext(ProviderContext);
   const history = useNavigate();
 
   const [logins, setLogins] = useState([...data]);
@@ -34,25 +34,35 @@ function Login() {
 
   const submit = (index) => {
     if (logins[index].user && logins[index].password) {
-      /*
-      data = {};
-      url = "";
-      axios
-        .post(url, data)
+      let data = {
+        email: logins[index].user,
+        password: logins[index].password,
+      };
+      instance
+        .post("login", data)
         .then((response) => {
           console.log(response);
+          let newInstance = axios.create({
+            baseURL: import.meta.env.VITE_BASE_API_URL,
+            headers: {
+              "Content-Type": "application/json",
+              "X-Requested-With": "XMLHttpRequest",
+              "Authorization": `Bearer ${response.data.access_token}`,
+            },
+          });
+
+          updateInstance(newInstance);
+
+          let finalUser = {
+            id: 1,
+            name: logins[index].user,
+          };
+          updateUser(finalUser);
+          history("/home");
         })
         .catch((error) => {
           console.error("There was an error!", error);
         });
-        */
-
-      let finalUser = {
-        id: 1,
-        name: logins[index].user,
-      };
-      updateUser(finalUser);
-      history("/home");
     }
 
     //alert("error");

@@ -5,6 +5,9 @@ const interfazReducer = (state, action) => {
     case actions.UPDATE_USER: {
       return { ...state, user: action.user };
     }
+    case actions.UPDATE_INSTANCE: {
+      return { ...state, instance: action.instance };
+    }
     default:
       return state;
   }

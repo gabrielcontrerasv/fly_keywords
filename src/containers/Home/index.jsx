@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Carousel } from "react-responsive-carousel";
+
 import Layout from "../../components/Layout";
 import { CarouselContainer, CarouselContent, HomeContent } from "./styles";
 import data from "../../data.json";
+
+import { ProviderContext } from "../../providers";
 
 const colors = [
   "#3346FF",
@@ -15,6 +18,7 @@ const colors = [
 ];
 
 function Home() {
+  const { instance } = useContext(ProviderContext);
   const [quotes, setQuotes] = useState([]);
   const [quote, setQuote] = useState(0);
 
@@ -25,6 +29,16 @@ function Home() {
     });
 
     setQuotes([...finalData]);
+
+    instance
+      .get("user")
+      .then((response) => {
+        console.log(response);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
   }, []);
   return (
     <Layout title={"HOME"}>
