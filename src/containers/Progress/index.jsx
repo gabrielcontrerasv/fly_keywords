@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 
 import Layout from "../../components/Layout";
+import {Bar} from "../../components/CustomCharts/CustomBar";
 import Navbar from "../../components/Nabvar";
 import { CustomPie } from "../../components/CustomCharts/CustomPie";
 import { PageContent, PageContentTop, PageContentDown } from "./styles";
 
 function Home() {
+  //<Bar />
   return (
     <Layout>
       <PageContent>
@@ -16,6 +18,7 @@ function Home() {
           <CustomPie />
           <CustomPie />
           <CustomPie />
+           
         </PageContentDown>
       </PageContent>
     </Layout>
