@@ -18,7 +18,7 @@ function Home() {
           <CustomPie />
           <CustomPie />
           <CustomPie />
-           
+          <Bar />
         </PageContentDown>
       </PageContent>
     </Layout>

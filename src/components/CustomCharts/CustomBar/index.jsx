@@ -33,10 +33,6 @@ export const options = {
   },
 };
 
-
-import {Bar} from "../../components/CustomCharts/CustomBar";
-
-
 const labels = ['Oro', 'Plata', 'Bronce'];
 
 export const data = {
