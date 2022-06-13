@@ -39,22 +39,22 @@ export const data = {
   datasets: [
     {
       label: 'EJC',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+      data: labels.map(() => Math.floor(Math.random() * (1000 - 1 + 1) + 1)),
       backgroundColor: 'rgb( 199, 0, 57)',
     },
     {
       label: 'FAC',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+      data: labels.map(() => Math.floor(Math.random() * (1000 - 1 + 1) + 1)),
       backgroundColor: 'rgba( 5, 23, 102)',
     },
     {
       label: 'ARC',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+      data: labels.map(() => Math.floor(Math.random() * (1000 - 1 + 1) + 1)),
       backgroundColor: 'rgba(  12, 34, 129)',
     },
     {
       label: 'PONAL',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+      data: labels.map(() => Math.floor(Math.random() * (1000 - 1 + 1) + 1)),
       backgroundColor: 'rgba( 12, 129, 56)',
     },
   ],
