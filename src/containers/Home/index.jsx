@@ -5,6 +5,12 @@ import Layout from "../../components/Layout";
 import { CarouselContainer, CarouselContent, HomeContent } from "./styles";
 import data from "../../data.json";
 
+import img1 from "../../assets/imgs/ejercito.png";
+import img2 from "../../assets/imgs/fac.png";
+import img3 from "../../assets/imgs/armada.png";
+
+const imgs = [img1, img2, img3];
+
 const colors = [
   "#3346FF",
   "#33FFB5",
@@ -39,7 +45,7 @@ function Home() {
                     <div className="row mt-2">
                       <section className="col-md-12 d-flex d-flex justify-content-center text-center">
                         <b>
-                          <img src={quote.image} />
+                          <img src={imgs[index]} />
                         </b>
                       </section>
                     </div>
