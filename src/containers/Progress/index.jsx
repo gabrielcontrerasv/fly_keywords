@@ -18,7 +18,7 @@ function Home() {
           <CustomPie />
           <CustomPie />
           <CustomPie />
-          <CharBar />
+          <ChartBar />
         </PageContentDown>
       </PageContent>
     </Layout>
