@@ -57,6 +57,7 @@ const containers = [
     title: "Estudiantes",
     private: true,
   },
+  /*
   {
     component: <Import />,
     path: "/import",
@@ -64,7 +65,7 @@ const containers = [
     title: "importar",
     private: true,
   },
-  /*
+
   {
     component: <Export />,
     path: "/export",
@@ -72,6 +73,7 @@ const containers = [
     title: "exportar",
     private: true,
   },
+   */
   {
     component: <NotFound />,
     path: "*",
@@ -79,7 +81,6 @@ const containers = [
     title: "",
     private: false,
   },
-  */
 ];
 
 function App() {
