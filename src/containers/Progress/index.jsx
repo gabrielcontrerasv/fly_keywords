@@ -12,13 +12,13 @@ function Home() {
     <Layout>
       <PageContent>
         <PageContentTop>
-          <CustomPie minWith={"20vw"} />
+          <ChartBar minWith={"60vw"} />
         </PageContentTop>
         <PageContentDown>
           <CustomPie />
           <CustomPie />
           <CustomPie />
-          <ChartBar />
+
         </PageContentDown>
       </PageContent>
     </Layout>
