@@ -40,7 +40,7 @@ function Home() {
           {data.map((element, index) => {
             return (
               <Card className="card" key={index}>
-                <CardsHeader>
+                <CardsHeader background={element.color}>
                   <div>{element.force}</div>
                   <div>
                     <img
@@ -59,19 +59,35 @@ function Home() {
                   <p
                     style={{
                       fontWeight: "bold",
+                      margin: 0,
                     }}
                   >
-                    {element.sport}
+                    <span>{element.sport.toUpperCase()}</span>
                   </p>
-                  <p>Nacionalidad: colombiano</p>
-                  <p>Nombre: alumno1</p>
-                  Edad: 2000-01-01
-                  <p>Genero: Masculino</p>
-                  Medallas de Oro 2<p>Medallas de Plata 2</p>
-                  <p>Medallas de Bronce 2</p>{" "}
                   <CardFlagContainer>
                     <img src={element.flag_image} alt="..." />
                   </CardFlagContainer>
+                  <p>
+                    <span>Nacionalidad:</span> colombiano
+                  </p>
+                  <p>
+                    <span>Nombre: </span> {element.name}
+                  </p>
+                  <p>
+                    <span>Edad: </span> {element.birthday}
+                  </p>
+                  <p>
+                    <span>Genero: </span> {element.sexo}
+                  </p>
+                  <p>
+                    <span>Medallas de Oro </span> 2
+                  </p>
+                  <p>
+                    <span>Medallas de Plata </span> 2
+                  </p>
+                  <p>
+                    <span>Medallas de Bronce </span> 2
+                  </p>
                 </CardsBody>
               </Card>
             );

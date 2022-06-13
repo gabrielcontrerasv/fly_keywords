@@ -64,6 +64,7 @@ const containers = [
     title: "importar",
     private: true,
   },
+  /*
   {
     component: <Export />,
     path: "/export",
@@ -78,6 +79,7 @@ const containers = [
     title: "",
     private: false,
   },
+  */
 ];
 
 function App() {
